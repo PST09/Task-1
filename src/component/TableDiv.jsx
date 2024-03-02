@@ -1,22 +1,25 @@
-import { TableCell, TableRow } from '@mui/material'
-import React from 'react'
+import { TableCell, TableRow } from "@mui/material";
+import React from "react";
 
-export default function TableDiv({data}) {
-  return (
-    <>
-     <TableRow
-            
-            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+export default function TableDiv({ data, handleModal }) {
+    return (
+        <>
+            <TableRow
+                sx={{
+                    "&:last-child td, &:last-child th": { border: 0 },
+                    ":hover": { cursor: "pointer", bgcolor: "#82CA9D" },
+                }}
+                onClick={() => handleModal(data.code)}
             >
-            <TableCell component="th" scope="row">
-                {data.code}
-            </TableCell>
-            <TableCell align="right">{data.symbol}</TableCell>
-            <TableCell align="right">{data.rate}</TableCell>
-            <TableCell align="right">{data.description}</TableCell>
-            <TableCell align="right">{data.rate_float}</TableCell>
+                <TableCell component="th" scope="row">
+                    {data.code}
+                </TableCell>
+                <TableCell align="">{data.code}</TableCell>
+                <TableCell align="">{data.symbol}</TableCell>
+                <TableCell align="">{data.rate}</TableCell>
+                <TableCell align="">{data.description}</TableCell>
+                <TableCell align="">{data.rate_float}</TableCell>
             </TableRow>
-        
-    </>
-  )
+        </>
+    );
 }

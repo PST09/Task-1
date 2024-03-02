@@ -1,18 +1,18 @@
-
-import React, { PureComponent } from 'react'
-import Chart from './component/Chart'
-import Dashboard from './component/Dashboard'
-
-
+import React, { PureComponent } from "react";
+import Dashboard from "./component/Dashboard";
+import "./App.css";
+import { ContextApi } from "./component/ContextApi";
 
 function App() {
   return (
-    <div>
-      
-      <Dashboard/>
-      <Chart/>
-    </div>
-  )
+    <ContextApi>
+      <div className="main-container">
+        <div className="container">
+          <Dashboard />
+        </div>
+      </div>
+    </ContextApi>
+  );
 }
 
-export default App
+export default App;
